@@ -18,12 +18,21 @@ module.exports = {
         }
 
     },
+    listAllUsers(req, res){
+        User
+    .findAll()
+    .then(accounts => res.json({ status: 200, accounts: accounts }))
+    .catch(err => res.json({ status: 202 }));
+    },
 
     create(req, res) {
         try {
             const userCollection = User
                 .create({
                     email: req.body.email,
+                    password: req.body.password,
+                    full_name: req.body.full_name,
+                    birthday: req.body.birthday
                 });
 
             res.status(201).send(userCollection);
@@ -45,7 +54,11 @@ module.exports = {
             if (userCollection) {
 
                 const updatedUser = User.update({
-                    id: req.body.email
+                    // id: req.body.email
+                    email: req.body.email,
+                    password: req.body.password,
+                    full_name: req.body.full_name,
+                    birthday: req.body.birthday
                 });
 
                 res.status(201).send(updatedUser)

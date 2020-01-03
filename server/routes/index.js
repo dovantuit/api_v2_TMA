@@ -14,10 +14,12 @@ module.exports = (app) => {
 
     app.put('/api/user/:userId',userController.update);
 
-    app.get('/api/:userId/posts',postController.getAllPostsOfUser);
+    // app.get('/api/:userId/posts',postController.getAllPostsOfUser);
 
-    app.post('/api/post/create',postController.createPost);
+    // app.post('/api/post/create',postController.createPost);
 
-    app.put('/api/:postId',postController.update);
+    // app.put('/api/:postId',postController.update);
+    // test
+    app.get('/api/user/list', userController.listAllUsers);
 
 }

@@ -9,7 +9,19 @@ module.exports = {
         },
         email: {
           type: Sequelize.STRING,
-          allowNull: false,
+          allowNull: true,
+        },
+        password: { 
+          type: Sequelize.STRING,
+          allowNull: true,
+        },
+        full_name: {
+          type: Sequelize.STRING,
+          allowNull: true,
+        },
+        birthday: {
+          type: Sequelize.DATE,
+          allowNull: true,
         },
         createdAt: {
           allowNull: false,
